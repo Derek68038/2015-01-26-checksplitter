@@ -46,15 +46,13 @@ end
 
 class CheckSplitter
   
+  attr_accessor :cost
+  
   def initialize(cost, people) #initialized both the cost & # of people
     @cost = cost
     @tip = @cost * 0.2 #set default value for tip
     @people = people
     @total = total
-  end
-  
-  def get_cost
-    @cost
   end
   
   def new_tip(x) #calculate new tip 
