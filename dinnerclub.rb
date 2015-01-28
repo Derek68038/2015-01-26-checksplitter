@@ -55,7 +55,7 @@ class DinnerClub
     event_check = CheckSplitter.new(bill, person.length)
     person.each do |a| 
       if a = pay
-        group_list[a] += event_check.total
+        @group_list[a] += event_check.total
       else
         a = 0
       end
