@@ -30,7 +30,7 @@ class DinnerClub
     @group_list
   end
   
-  Public: #event
+  # Public: #event
   
   def event(place, person, bill)
     @place = place
@@ -103,7 +103,7 @@ fun_group.location
 
 dull_group = DinnerClub.new(["Bill", "Tom", "Jason"])
 dull_group.group_list
-dull_group.treat_everyone("Burger King", ["Bill", "Tom"], 35, "Tom")
+dull_group.event("Burger King", ["Bill", "Tom"], 35)
 
 binding.pry
   
