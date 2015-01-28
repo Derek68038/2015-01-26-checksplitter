@@ -27,7 +27,7 @@ class CheckSplitter
   end
   
   def return
-    puts "Each person owes $#{total / @people}."
+    total / @people
   end
 end  
 
