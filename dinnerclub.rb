@@ -1,4 +1,10 @@
 require 'pry'
+# Class: DinnerClub
+#
+# Create a dinner club group and keep track of their tabs & where they go.
+#
+# Attributes:
+# @group    - String: the group of people who are in the dinner club.
 
 class DinnerClub
 
@@ -6,12 +12,26 @@ class DinnerClub
     @group = group
   end
 
+  # Public: #group_list
+  # Creates empty hash which uses each club member in group as key and zero as value.
+  #
+  # Parameters:
+  # none
+  #
+  # Returns:
+  # A hash with group members as keys and 0, for their starting balance, as values.
+  #
+  # State_Changes:
+  # Sets @group as hash keys
+  
   def group_list
     @group_list = {}
     @group.each { |m| @group_list[m] = 0 }
     @group_list
   end
-
+  
+  Public: #event
+  
   def event(place, person, bill)
     @place = place
     @person = person
@@ -69,6 +89,10 @@ class CheckSplitter
   
   def per_person
     total / num_of_people
+  end
+  
+  def print_output
+    puts "Each person owes: $" + sprintf("%.2f", per_person)
   end
 end 
 
