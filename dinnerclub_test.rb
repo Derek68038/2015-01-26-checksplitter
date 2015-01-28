@@ -47,7 +47,7 @@ class DinnerClub
   end
   
   def locations
-    @location[@place] = @place
+    @location[@place] = @person
     @location
   end
   
