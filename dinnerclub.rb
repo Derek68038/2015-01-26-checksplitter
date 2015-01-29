@@ -70,7 +70,7 @@ end
 
 class CheckSplitter
   
-  attr_accessor :cost
+  attr_accessor :tip, :cost, :people
   
   def initialize(cost, people) #initialized both the cost & # of people
     @cost = cost
@@ -83,24 +83,16 @@ class CheckSplitter
     @tip = x
   end
   
-  def num_of_people
-    @people
-  end 
-  
   def total
     @cost + @tip 
   end
   
   def per_person
-    total / num_of_people
+    per_person = total / people
+    per_person.ceil.to_i
   end
   
-  def print_output
-    puts "Each person owes: $" + sprintf("%.2f", per_person)
-  end
 end 
-
-
 
 binding.pry
   
