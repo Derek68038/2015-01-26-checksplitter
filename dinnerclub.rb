@@ -7,9 +7,12 @@ require 'pry'
 # @group    - String: the group of people who are in the dinner club.
 
 class DinnerClub
-
+  
+  attr_accessor :location
+  
   def initialize(group)
     @group = group
+    @location = {}
   end
 
   # Public: #group_list
@@ -35,6 +38,7 @@ class DinnerClub
   def event(place, person, bill)
     @place = place
     @person = person
+    @location[@place] = @person
     event_check = CheckSplitter.new(bill, person.length)
     person.each do |a| 
       @group_list[a] += event_check.per_person
@@ -42,19 +46,16 @@ class DinnerClub
     @group_list
   end
   
-  # def loc
-  #@loc[@place] = @person
-  #@loc
-  def location
-    location = {}
-    location[@place] = @person
-    location
+  def locations
+    @location[@place] = @person
+    @location
   end
 
   def treat_everyone(place, person, bill, pay)
     @place = place
     @person = person
     @pay = pay
+    @location[@place] = @person
     event_check = CheckSplitter.new(bill, person.length)
     person.each do |a| 
       if a == pay
@@ -99,14 +100,8 @@ class CheckSplitter
   end
 end 
 
-fun_group = DinnerClub.new(["Derek","Hilary","Brett","Dawn"]) 
-fun_group.group_list
-fun_group.treat_everyone("Lot 2", ["Derek", "Hilary", "Brett", "Dawn"], 150, "Derek")
-fun_group.location
 
-dull_group = DinnerClub.new(["Bill", "Tom", "Jason"])
-dull_group.group_list
-dull_group.event("Burger King", ["Bill", "Tom"], 35)
 
 binding.pry
+  
   
