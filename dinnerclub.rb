@@ -61,6 +61,18 @@ class DinnerClub
     @group_list
   end
   
+  # Public: #locations
+  # Places each place name in a hash as the key and the people who went there as values.
+  #
+  # Parameters:
+  # None
+  #
+  # Returns:
+  # location: A hash of what restaurants the club went to and who went where.
+  #
+  # State Changes:
+  # None
+  
   def locations
     @location[@place] = @person
     @location
