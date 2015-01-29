@@ -41,7 +41,10 @@ class DinnerClub
     end
     @group_list
   end
-
+  
+  # def loc
+  #@loc[@place] = @person
+  #@loc
   def location
     location = {}
     location[@place] = @person
@@ -54,10 +57,10 @@ class DinnerClub
     @pay = pay
     event_check = CheckSplitter.new(bill, person.length)
     person.each do |a| 
-      if a = pay
+      if a == pay
         @group_list[a] += event_check.total
       else
-        a = 0
+        a == 0
       end
     end
    @group_list
