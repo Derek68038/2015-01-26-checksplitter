@@ -4,7 +4,8 @@ require 'pry'
 # Create a dinner club group and keep track of their tabs & where they go.
 #
 # Attributes:
-# @group    - String: the group of people who are in the dinner club.
+# @group    - String:  The group of people who are in the dinner club.
+# @location - Hash:    Receives place as the key and who went there as the values. 
 
 class DinnerClub
   
@@ -34,6 +35,20 @@ class DinnerClub
   end
   
   # Public: #event
+  # Takes 3 arguments & places each person in the location hash. Then assigns a variable
+  # called event_check as the CheckSplitter oject & iterates over each person in that 
+  # event to calculate how much each person owes.
+  #
+  # Parameters:
+  # place      - String:  The restaurant name.
+  # person     - Array:   Who went to the restaurant.
+  # bill       - Integer: How much the total bill was, without tip.
+  #
+  # Returns:
+  # group_list: Who's in the dinner club and how much have they spent total.
+  #
+  # State Changes:
+  # Sets event_check as the object CheckSplitter with it's two arguments.
   
   def event(place, person, bill)
     @place = place
